@@ -1,162 +1,188 @@
-/* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  font-family: 'Orbitron', sans-serif;
-  color: white;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-/* Overall Body Background (subtle solid color as backup) */
-body {
-  background-color: #0f0f0f;
-}
-
-/* Header Styles */
-header {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 100;
-  backdrop-filter: blur(6px);
-}
-
-.logo {
-  font-size: 2rem;
-  color: white;
-}
-
-.nav-buttons {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* Glowing Button */
-.glow-button {
-  padding: 0.7rem 1.6rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #8b5cf6;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 0 10px #8b5cf6;
-  transition: all 0.3s ease;
-}
-
-.glow-button:hover {
-  background-color: #a855f7;
-  box-shadow: 0 0 20px #a855f7, 0 0 40px #a855f7;
-}
-
-/* Content Background Panel with Animated Moving Gradient */
-/* Body with GIF background */
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
   color: white;
-  background: url('https://weblium.com/blog/wp-content/uploads/2019/09/photo-1533135091724-62cc5402aa20-1344x734.jpeg') no-repeat center center fixed;
-  background-size: cover;
-}
-
-/* Optional: translucent background overlay for content */
-.content-background {
-  background-color: rgba(0, 0, 0, 0.6); /* keeps text readable */
-  padding: 4rem 2rem;
-}
-
-
-
-/* Animated Gradient Keyframes */
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Hero Section */
-section.hero {
-  text-align: center;
-  padding: 2rem;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #ccc;
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
-}
-
-/* Central Large Download Button */
-.big-download-btn {
-  padding: 1rem 2.5rem;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-/* Image Container (placed on top of the content background) */
-.image-container {
-  margin: 0 auto;
-  max-width: 800px;
-  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
 }
 
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Features Section */
-section.features {
-  padding: 6rem 2rem;
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.5s ease-out;
+  padding: 2rem;
 }
 
-.features h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideUp 1s ease-out;
+}
+
+.executor-img {
+  width: 500px;
+  height: auto;
+  /* Removed border-radius */
+  margin-bottom: 30px;
+  box-shadow: 0 0 60px rgba(128, 0, 255, 0.6);
+  animation: glowImg 2s infinite alternate ease-in-out;
+  transition: transform 0.4s ease;
+}
+
+.executor-img:hover {
+  transform: scale(1.02);
+}
+
+.title {
+  font-size: 4rem;
+  color: #d5aaff;
+  margin: 10px 0;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: #c2b6d3;
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn {
+  background: #8000ff;
+  color: white;
+  padding: 1.3rem 2.8rem;
+  border: none;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  text-decoration: none;
+  box-shadow: 0 0 20px #8000ff;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.07);
+}
+
+.btn:active {
+  box-shadow: 0 0 30px #c299ff;
+}
+
+.discord-btn {
+  background: #5865F2;
+  box-shadow: 0 0 20px #5865F2;
+}
+
+.discord-btn:active {
+  box-shadow: 0 0 30px #8892ff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowImg {
+  from {
+    box-shadow: 0 0 40px rgba(128, 0, 255, 0.5);
+  }
+  to {
+    box-shadow: 0 0 80px rgba(128, 0, 255, 0.9);
+  }
+}
+
+/* Info Button */
+.info-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #8000ff;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #8000ff;
+  animation: floatBtn 2s infinite ease-in-out;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
+}
+
+.info-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #a577ff;
+}
+
+@keyframes floatBtn {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  color: white;
+  box-shadow: 0 0 30px #8000ff;
+  animation: fadeInModal 0.4s ease;
+  text-align: left;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #c399ff;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.close-btn {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close-btn:hover {
   color: #fff;
 }
 
-.features ul {
-  list-style: none;
-  padding: 0;
+@keyframes fadeInModal {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.features li {
-  font-size: 1.2rem;
-  margin: 1rem 0;
-  color: #ccc;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #111;
-  font-size: 0.9rem;
-  color: #666;
-}
