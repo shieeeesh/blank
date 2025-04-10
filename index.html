@@ -3,48 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BLANK Executor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <title>Blank Executor</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">BLANK</div>
-    <div class="nav-buttons">
-      <!-- Top right download button -->
-      <button id="download-btn-header" class="glow-button">Download</button>
-      <!-- Discord Link -->
-      <a href="https://discord.gg/vRmDtDWs36" target="_blank" class="glow-button">Discord</a>
-    </div>
-  </header>
+  <div class="main-wrapper">
+    <div class="content">
+      <img
+        src="https://cdn.discordapp.com/attachments/1358174202766557266/1360001673531097179/image.png?ex=67f987c2&is=67f83642&hm=9aaaa7e6653d6dd74eb6a8dfd26cd5f977d3a203e7727c792777f41418e56a9a&"
+        alt="Blank Executor"
+        class="executor-img"
+      />
 
-  <!-- Content Background: the panel that holds the hero content -->
-  <div class="content-background">
-    <section class="hero">
-      <h1>Welcome to BLANK Executor</h1>
-      <p>The ultimate Roblox executor with blazing-fast injection and unbeatable reliability.</p>
-      <!-- Big central download button -->
-      <button id="download-btn-hero" class="glow-button big-download-btn">Download Now</button>
-      <!-- Image Container with your provided image -->
-      <div class="image-container">
-        <img src="https://cdn.discordapp.com/attachments/1358988043347824702/1359673407679103158/image.png?ex=67f85609&is=67f70489&hm=8cf357bff3398f3ed0223548b4bc29a174b4dc118a55a354e12da6442496f610&" alt="BLANK Executor Screenshot">
+      <h1 class="title">Blank Executor</h1>
+      <p class="subtitle">Join the Discord to buy.</p>
+
+      <div class="buttons">
+        <a id="download-btn" href="#" class="btn">Download</a>
+        <a href="https://discord.gg/vRmDtDWs36" class="btn discord-btn" target="_blank">Join Discord</a>
       </div>
-    </section>
+    </div>
   </div>
 
-  <section class="features">
-    <h2>Features</h2>
-    <ul>
-      <li>⚡ Smooth Injection</li>
-      <li>💰 Only $5</li>
-      <li>📜 Built-in Scripts</li>
-      <li>🛡️ 89% Undetectable</li>
-    </ul>
-  </section>
+  <!-- Info Button -->
+<button id="info-btn" class="info-button">
+  ℹ️
+</button>
 
-  <footer>
-    <p>&copy; 2025 BLANK. All rights reserved.</p>
-  </footer>
+<!-- Info Modal -->
+<div id="info-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Information</h2>
+    <p>
+      <strong>Blank</strong> is a high-performance executor with frequent updates and an impressive <strong>89% UNC</strong>.  
+      Get <strong>lifetime access</strong> for just <span style="color:#a577ff;"><strong>$5</strong></span> and elevate your experience.
+    </p>
+  </div>
+</div>
 
   <script src="script.js"></script>
 </body>
