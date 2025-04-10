@@ -1,18 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const downloadUrl = 'https://files.catbox.moe/v8rxa6.zip'; // Reference your file here
+  // Download Logic
+  const downloadUrl = 'https://files.catbox.moe/v8rxa6.zip';
 
-  // Function to create and trigger the download link
-  function triggerDownload() {
-    const a = document.createElement('a');
-    a.href = downloadUrl;
-    a.download = 'UPDATED.zip'; // Sets the filename for download
-    a.style.display = 'none'; // Hide the link element
-    document.body.appendChild(a);
-    a.click(); // Simulate click to trigger download
-    document.body.removeChild(a); // Remove the link element after triggering the download
+  const downloadBtn = document.getElementById('download-btn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const a = document.createElement('a');
+      a.href = downloadUrl;
+      a.download = 'BlankExecutor.zip';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
   }
 
-  // Add event listeners for both download buttons
-  document.getElementById('download-btn-header').addEventListener('click', triggerDownload);
-  document.getElementById('download-btn-hero').addEventListener('click', triggerDownload);
+  // Info Modal Logic
+  const infoBtn = document.getElementById("info-btn");
+  const modal = document.getElementById("info-modal");
+  const closeBtn = document.querySelector(".close-btn");
+
+  if (infoBtn && modal && closeBtn) {
+    infoBtn.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
 });
+
