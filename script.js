@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Download Logic
-  const downloadUrl = 'https://files.catbox.moe/v8rxa6.zip';
+  const downloadUrl = 'https://files.catbox.moe/f1hoef.zip';
 
   const downloadBtn = document.getElementById('download-btn');
   if (downloadBtn) {
